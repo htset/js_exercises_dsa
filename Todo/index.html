@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .todo-form, .remove-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .todo-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .todo-item {
+      margin-bottom: 5px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Todo List Manager</h1>
+
+  <form id="todoForm" class="todo-form">
+    <input type="text" id="description" 
+      placeholder="Enter task description">
+    <input type="number" id="priority" 
+      placeholder="Enter priority">
+    <button type="submit">Add Task</button>
+  </form>
+
+  <form id="removeForm" class="remove-form">
+    <input type="number" id="removeIndex" 
+      placeholder="Enter task number to remove">
+    <button type="submit">Remove Task</button>
+  </form>
+
+  <button id="sortButton">Sort Tasks by Priority</button>
+
+  <ul id="todoList" class="todo-list">
+    <!-- Todo items will be added dynamically here -->
+  </ul>
+
+  <script src="todo.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Task Allocation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .tasks,
+    .workers {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Task Allocation</h1>
+  <form id="taskForm">
+    <label for="description">Task Description:</label>
+    <input type="text" id="description" required>
+    <label for="duration">Task Duration (in minutes):</label>
+    <input type="number" id="duration" required>
+    <button type="submit">Add Task</button>
+  </form>
+
+  <div class="tasks">
+    <h2>Tasks</h2>
+    <ul id="taskList"></ul>
+  </div>
+
+  <div class="workers">
+    <h2>Workers Queue</h2>
+    <ul id="workerList"></ul>
+  </div>
+
+  <script src="taskAllocation.js"></script>
+</body>
+
+</html>

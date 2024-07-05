@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auction Client</title>
+</head>
+<body>
+  <h1>Auction Client</h1>
+  <input type="number" id="bidAmount" placeholder="Enter your bid">
+  <button onclick="sendBid()">Send Bid</button>
+  <div id="messages"></div>
+
+  <script>
+    const ws = new WebSocket('ws://localhost:8080');
+
+    ws.onmessage = (event) => {
+      const messagesDiv = document.getElementById('messages');
+      messagesDiv.innerHTML += `<p>${event.data}</p>`;
+    };
+
+    function sendBid() {
+      const bidAmount = document.getElementById('bidAmount').value;
+      ws.send(bidAmount);
+    }
+  </script>
+</body>
+</html>
